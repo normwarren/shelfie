@@ -1,0 +1,60 @@
+.App {
+  text-align: left;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  background: #34a5da;
+}
+.Top{
+  background: #34a5da;
+  height: 75px;
+  display: fex;
+  align-content: flex-start;
+
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.BackColor{
+  background:#000000;
+}
+.FrontColor{
+  background:  #ebebeb;
+
+}
+div button
+{
+  
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+}
+.Top h3{
+
+}
+
