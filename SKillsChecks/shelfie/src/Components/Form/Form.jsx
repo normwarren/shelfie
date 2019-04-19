@@ -11,11 +11,28 @@ export default class Form extends Component {
       price: 0,
       imgurl: ""
     };
+    //this.getInventory = this.getInventory.bind(this);
   }
 
-  // handleChange
-  // postToDB
-  // clearInputs
+  addProduct = product => {
+    axios
+      .post("/api/product", product)
+      .then(res => {
+        this.setState({
+          inventory: res.data
+        });
+      })
+      .catch(err => console.log("we have a problem:", err));
+
+    this.getInventory();
+    this.clearInputClick();
+  };
+
+  handleClick = () => {
+    let { name, price, imgurl: image_url } = this.state;
+    let product = { name, price, image_url };
+    this.addProduct(product);
+  };
 
   handleChange = e => {
     let { value, name } = e.target;
@@ -24,11 +41,6 @@ export default class Form extends Component {
     });
   };
 
-  // handleClick = () => {
-  //   let newProfile = this.state;
-  //   this.props.createProfile(newProfile);
-  // };
-
   clearInputClick = () => {
     //let { name } = e.target;
     this.setState({
@@ -36,17 +48,6 @@ export default class Form extends Component {
       price: 0,
       imgurl: ""
     });
-  };
-
-  createProduct = newProduct => {
-    axios
-      .post("/api/products", newProduct)
-      .then(res => {
-        this.setState({
-          inventory: res.data
-        });
-      })
-      .catch(err => console.log("we have a problem:", err));
   };
 
   render() {
